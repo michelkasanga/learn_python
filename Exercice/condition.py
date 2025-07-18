@@ -9,17 +9,17 @@ def majeur(): #fonction pour l'ecart d'age
 def vieux(): #fonction pour l'ecart d'age
    return  range(60, 100)
 
-def age(): # Fonction pour demander l'âge
+def ages(): # Fonction pour demander l'âge
    return  input("Quel est votre age ? ")
 
 def popCorn():
    return  5
+            
+   
 
-
-
-def cimema():
+def cinema():
     print("Bienvenue au cinéma !")
-    age = int(age())
+    age = int(ages())
     if age in mineur():
         pop = input("voulez vous du pop corn ? ")
 
@@ -48,6 +48,10 @@ def cimema():
         
 
 if __name__ == "__main__":
-    cimema()
-
+  while True: # Boucle pour continuer à acheter des billets
+    cinema()
+    continuer = input("Voulez-vous acheter un autre billet ? (oui/non) ")
+    if continuer.lower() != ["oui", "o", "yes", "y"]:
+        print("Merci pour l'achat de billet !")
+        break
     
