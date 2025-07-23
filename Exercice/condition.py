@@ -18,32 +18,32 @@ def popCorn():
    
 
 def cinema():
+
     print("Bienvenue au cinéma !")
     age = int(ages())
-    if age in mineur():
+    
+    if age in mineur(): #verifie si l'age est dans la tranche d'age mineur
         pop = input("voulez vous du pop corn ? ")
-
         if pop == "oui" or pop == "Oui" or pop == "OUI" or pop == "o" or pop == "O" or pop == "yes" or pop == "Y":
             print(f"Votre billet coûte {Billet.mineur()} euros et votre pop corn {popCorn()} euros.\n Total : {Billet.mineur() + popCorn()} euros.")
         else:
             print(f"Votre billet coûte {Billet.mineur()} euros.")
 
-    elif age in majeur():
+    elif age in majeur(): #verifie si l'age est dans la tranche d'age majeur
         pop = input("voulez vous du pop corn ? ")
-
         if pop == "oui" or pop == "Oui" or pop == "OUI" or pop == "o" or pop == "O" or pop == "yes" or pop == "Y":
             print(f"Votre billet coûte {Billet.majeur()} euros et votre pop corn {popCorn()} euros.\n Total : {Billet.majeur() + popCorn()} euros.")
         else:
             print(f"Votre billet coûte {Billet.majeur()} euros.")
 
-    elif age in vieux():
+    elif age in vieux():# verifie si l'age est dans la tranche d'age vieux
         pop = input("voulez vous du pop corn ? ")
-        
         if pop == "oui" or pop == "Oui" or pop == "OUI" or pop == "o" or pop == "O" or pop == "yes" or pop == "Y":
             print(f"Votre billet coûte {Billet.vieux()} euros et votre pop corn {popCorn()} euros.\n Total : {Billet.vieux() + popCorn()} euros.")
         else:
             print(f"Votre billet coûte {Billet.vieux()} euros.")
-    else:
+
+    else: # Si l'âge n'est pas dans les tranches définies
         print("Vous n'êtes pas autorisé à entrer dans le cinéma.")
         
 
