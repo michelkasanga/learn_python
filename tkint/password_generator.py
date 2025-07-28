@@ -44,15 +44,19 @@ right_frame.grid(row=0, column=1, sticky=W)  # Pack the label with some padding
 frame.pack(expand=YES)  # Pack the frame with some padding
 
 #creation d'une barre  de menu
-menu_bar = Menu(window) 
-#creation du premier menu 
-file_menu = Menu(menu_bar, tearoff=0)
-file_menu.add_command(label="Nouveau", command=generate_passeword,foreground="white")
-file_menu.add_command(label="Quitter", command=window.quit, foreground="white")
-file_menu.add_cascade(label="Fichier", menu=file_menu, foreground="white")
-
-#affichage du menu
-window.config(menu=menu_bar)
+menu_bar = Menu(window)  # Create a menu bar    
+# Create a menu
+file_menu = Menu(menu_bar, tearoff=0)  # Create a file menu
+file_menu.add_command(label="Generate Password", command=generate_passeword)  # Add a command to the file menu
+file_menu.add_separator()  # Add a separator
+file_menu.add_command(label="Exit", command=window.quit)  # Add an exit command to the file menu
+menu_bar.add_cascade(label="File", menu=file_menu)  # Add the file menu
+# Create an "About" menu    
+about_menu = Menu(menu_bar, tearoff=0)  # Create an about menu
+about_menu.add_command(label="About", command=lambda: print("This is a password generator application."))  # Add an about command
+menu_bar.add_cascade(label="About", menu=about_menu)  # Add the about menu to the menu bar
+# Add the menu bar to the window
+window.config(menu=menu_bar)  # Configure the window to use the menu bar
 
 if __name__ == "__main__":
    
