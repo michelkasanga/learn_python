@@ -1,4 +1,8 @@
 from tkinter import *
+import webbrowser as web
+
+def open_link():
+    web.open("http://www.google.com") #ouvre un lien web
 
 window = Tk() #cree une fenetre
 
@@ -26,7 +30,16 @@ label_subtitle = Label(frame,
                     foreground= "white") #ajoute tu texte
 label_subtitle.pack() #affichage du texte (centre le texte)
 
+#ajout du boutton
+y_button = Button(frame, 
+                text="Genere le mot de passe", 
+                command=open_link, #l'action du boutton
+                background="blue", 
+                foreground="white", 
+                font=("Arial", 10)) #ajoute un boutton
+y_button.pack(pady=10) #affichage du boutton (centre le boutton)
+
 frame.pack(expand = YES) #affichage de la boite
 
 if __name__ == "__main__":
-    window.mainloop( )
+    window.mainloop( ) 
